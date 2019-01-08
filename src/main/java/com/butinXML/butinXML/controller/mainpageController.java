@@ -34,13 +34,12 @@ public class mainpageController {
                 redirectAttributes.addFlashAttribute("message", "<div class=\"alert alert-success\" role=\"alert\">\n" +
                         " Успешный запрос\n" +
                         "</div>");
-            } else {
-                redirectAttributes.addFlashAttribute("message", "<div class=\"alert alert-danger\" role=\"alert\">\n" +
-                        " Возникла ошибка\n" +
-                        "</div>");
             }
         } catch (JDOMException | IOException e) {
             e.printStackTrace();
+            redirectAttributes.addFlashAttribute("message", "<div class=\"alert alert-danger\" role=\"alert\">\n" +
+                    " Возникла ошибка\n" +
+                    "</div>");
         }
         return "redirect:/";
     }

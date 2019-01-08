@@ -3,6 +3,7 @@ package com.butinXML.butinXML.service;
 import org.jdom2.Document;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,8 +16,15 @@ import java.util.UUID;
 
 @Service
 public class parserService {
+    final xmlprs xmlprs;
+
     @Value("${upload.path}")
     private String uploadPath;
+
+    @Autowired
+    public parserService(xmlprs xmlprs) {
+        this.xmlprs = xmlprs;
+    }
 
     public String parseFile(MultipartFile file) throws IOException, JDOMException {
 //if file doesnt exist => create file in directory
@@ -35,6 +43,11 @@ public class parserService {
             SAXBuilder builder = new SAXBuilder();
             File xmlFile = new File(uploadPath + "/" + resultFilename);
             Document document = builder.build(xmlFile);
+
+            xmlprs.uch_plany(document);
+            xmlprs.disc_plana(document);
+            xmlprs.disk_semestr(document);
+            xmlprs.semestry(document);
             return "Success";
         }
         return "Bad";

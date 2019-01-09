@@ -19,7 +19,7 @@
             </tr>
             </thead>
             <tbody>
-            <#list disk_semestr as semestr>
+            <#list disk_semestry as semestr>
                 <tr>
                     <td>${semestr.pract!}</td>
                     <td>${semestr.id!}</td>

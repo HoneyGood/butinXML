@@ -10,7 +10,7 @@ public class disk_semestr {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "disk_id")
+    @Column(name = "disc_id")
     private Integer disk_id;
 
     @Column(name = "lect")

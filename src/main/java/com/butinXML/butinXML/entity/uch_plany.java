@@ -8,10 +8,10 @@ import java.util.Date;
 public class uch_plany {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "forma")
-    private char forma;
+    private Integer forma;
 
     @Column(name = "profile")
     private String profile;
@@ -23,7 +23,7 @@ public class uch_plany {
     private String institut;
 
     @Column(name = "fgos_id")
-    private int fgos_id;
+    private Integer fgos_id;
 
     @Column(name = "nom_protokola")
     private String nom_protokola;
@@ -37,19 +37,19 @@ public class uch_plany {
     @Column(name = "data_utv_opo")
     private Date data_utv_opo;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public char getForma() {
+    public Integer getForma() {
         return forma;
     }
 
-    public void setForma(char forma) {
+    public void setForma(Integer forma) {
         this.forma = forma;
     }
 
@@ -77,11 +77,11 @@ public class uch_plany {
         this.institut = institut;
     }
 
-    public int getFgos_id() {
+    public Integer getFgos_id() {
         return fgos_id;
     }
 
-    public void setFgos_id(int fgos_id) {
+    public void setFgos_id(Integer fgos_id) {
         this.fgos_id = fgos_id;
     }
 

@@ -10,7 +10,6 @@ public class xmlprs {
     void disc_plana(Document document) {
         List<Element> listPlan = document.getRootElement().getChild("План").getChild("СтрокиПлана").getChildren("Строка");
         for (Element elementStroka : listPlan) {
-
             System.out.println("name: " + elementStroka.getAttributeValue("Дис") + " || " +
                     "НовИдДисциплины: " + elementStroka.getAttributeValue("НовИдДисциплины") + " || " +
                     "СР: " + elementStroka.getAttributeValue("СР") + " || " +

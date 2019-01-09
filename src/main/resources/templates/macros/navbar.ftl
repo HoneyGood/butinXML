@@ -10,10 +10,10 @@
             <a class="nav-link" href="/semester">Semester</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">Link</a>
+            <a class="nav-link" href="/disc_plana">disc_plana</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="/disk_semestr">disk_semestr</a>
         </li>
     </ul>
 </#macro>

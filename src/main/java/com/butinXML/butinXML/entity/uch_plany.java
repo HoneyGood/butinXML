@@ -12,7 +12,7 @@ public class uch_plany {
     private Integer id;
 
     @Column(name = "forma")
-    private Integer forma;
+    private Character forma;
 
     @Column(name = "profile")
     private String profile;
@@ -46,11 +46,11 @@ public class uch_plany {
         this.id = id;
     }
 
-    public Integer getForma() {
+    public Character getForma() {
         return forma;
     }
 
-    public void setForma(Integer forma) {
+    public void setForma(Character forma) {
         this.forma = forma;
     }
 

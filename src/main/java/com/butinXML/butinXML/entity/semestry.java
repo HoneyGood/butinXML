@@ -29,7 +29,7 @@ public class semestry {
     private Date okon;
 
     @Column(name = "vid")
-    private Integer vid;
+    private Character vid;
 
     public Integer getId() {
         return id;
@@ -79,11 +79,11 @@ public class semestry {
         this.okon = okon;
     }
 
-    public Integer getVid() {
+    public Character getVid() {
         return vid;
     }
 
-    public void setVid(Integer vid) {
+    public void setVid(Character vid) {
         this.vid = vid;
     }
 }

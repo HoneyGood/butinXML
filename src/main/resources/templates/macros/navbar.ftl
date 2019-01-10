@@ -18,6 +18,9 @@
         <li class="nav-item">
             <a class="nav-link" href="/vidy_kontr">Виды контроля</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/kontr_sem">Виды контроля по семестрам</a>
+        </li>
         <#--/vidy_kontr-->
     </ul>
 </#macro>

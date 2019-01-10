@@ -1,6 +1,8 @@
 package com.butinXML.butinXML.entity;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "vidy_kontr")
@@ -17,6 +19,17 @@ public class vidy_kontr {
 
     @Column(name = "vid_kontr")
     private String vid_kontr;
+
+    @ManyToMany(mappedBy = "vidy_kontrs")
+    private Set<disk_semestr> disk_semestrs;
+
+    public Set<disk_semestr> getDisk_semestrs() {
+        return disk_semestrs;
+    }
+
+    public void setDisk_semestrs(Set<disk_semestr> disk_semestrs) {
+        this.disk_semestrs = disk_semestrs;
+    }
 
     public Integer getId() {
         return id;

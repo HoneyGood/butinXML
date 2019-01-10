@@ -52,4 +52,10 @@ public class entityController {
         model.addAttribute("vidy_kontr", vidy_kontrService.findAll());
         return "vidy_kontr";
     }
+//    kontr_sem
+@GetMapping("/kontr_sem")
+public String getkontr_sem(Model model) {
+    model.addAttribute("kontr_sem", disk_semestrService.findAll());
+    return "kontr_sem";
+}
 }

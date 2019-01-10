@@ -1,6 +1,8 @@
 package com.butinXML.butinXML.entity;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 //4
 @Entity
@@ -38,12 +40,26 @@ public class disk_semestr {
     private Integer nomsemestra;
 
     @ManyToOne
-    @JoinColumn(name = "sem_id",insertable = false,updatable = false)
+    @JoinColumn(name = "sem_id", insertable = false, updatable = false)
     private semestry semestry;
 
     @ManyToOne
-    @JoinColumn(name = "disc_id",insertable = false,updatable = false)
+    @JoinColumn(name = "disc_id", insertable = false, updatable = false)
     private disc_plana disc_plana;
+
+    @ManyToMany
+    @JoinTable(name = "kontr_sem",
+            joinColumns = @JoinColumn(name = "disc_id", referencedColumnName = "id"),
+            inverseJoinColumns =@JoinColumn(name = "kontr_id",referencedColumnName = "id"))
+    private Set<vidy_kontr> vidy_kontrs;
+
+    public Set<vidy_kontr> getVidy_kontrs() {
+        return vidy_kontrs;
+    }
+
+    public void setVidy_kontrs(Set<vidy_kontr> vidy_kontrs) {
+        this.vidy_kontrs = vidy_kontrs;
+    }
 
     public com.butinXML.butinXML.entity.disc_plana getDisc_plana() {
         return disc_plana;

@@ -2,6 +2,7 @@ package com.butinXML.butinXML.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 //1
 @Entity
@@ -37,6 +38,30 @@ public class uch_plany {
 
     @Column(name = "data_utv_opo")
     private Date data_utv_opo;
+
+    @OneToMany
+    @JoinColumn(name = "upl_id")
+    private Set<semestry> semestries;
+
+    @OneToMany
+    @JoinColumn(name = "upl_id")
+    private Set<disc_plana> disc_planas;
+
+    public Set<disc_plana> getDisc_planas() {
+        return disc_planas;
+    }
+
+    public void setDisc_planas(Set<disc_plana> disc_planas) {
+        this.disc_planas = disc_planas;
+    }
+
+    public Set<semestry> getSemestries() {
+        return semestries;
+    }
+
+    public void setSemestries(Set<semestry> semestries) {
+        this.semestries = semestries;
+    }
 
     public Integer getId() {
         return id;

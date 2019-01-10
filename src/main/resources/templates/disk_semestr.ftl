@@ -26,9 +26,9 @@
                     <td>${semestr.lab!}</td>
                     <td>${semestr.kontr!}</td>
                     <td>${semestr.srs!}</td>
-                    <td>${semestr.sem_id!}</td>
+                    <td>${(semestr.disc_plana.napr)!}</td>
                     <td>${semestr.lect!}</td>
-                    <td>${semestr.disk_id!}</td>
+                    <td>${(semestr.semestry.nach)!}</td>
                 </tr>
             </#list>
             </tbody>

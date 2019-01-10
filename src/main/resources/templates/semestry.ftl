@@ -14,6 +14,8 @@
                 <th>nach</th>
                 <th>okon</th>
                 <th>vid</th>
+                <th>semestry->diskplana</th>
+
 
             </tr>
             </thead>
@@ -21,12 +23,18 @@
             <#list semestrylist as semestry>
                 <tr>
                     <td>${(semestry.id)!}</td>
-                    <td>${(semestry.upl_id)!}</td>
-                    <td>${(semestry.nomer)!}</td>
+                    <td>${(semestry.uch_plany.profile)!}</td>
+                    <td><#list semestry.disk_semestrs as ds>
+                        <p>${ds.sem_id}</p>
+                    </#list></td>
                     <td>${(semestry.nedel)!}</td>
                     <td>${(semestry.nach)!}</td>
                     <td>${(semestry.okon)!}</td>
                     <td>${(semestry.vid)!}</td>
+                    <td><#list (semestry.disc_planas)! as dp>
+                        <p>${dp.napr}</p>
+                    </#list></td>
+
 
                 </tr>
             </#list>
@@ -40,6 +48,8 @@
                 <th class="input"></th>
                 <th class="input"></th>
                 <th class="input"></th>
+                <th class="input"></th>
+
             </tr>
             </tfoot>
         </table>

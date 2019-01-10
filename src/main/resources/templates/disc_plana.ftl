@@ -17,22 +17,28 @@
                 <th>nazv</th>
                 <th>napr</th>
                 <th>shifr</th>
+                <th>disk_plana->semestr</th>
+
 
             </tr>
             </thead>
             <tbody>
             <#list disc_plana as plans>
                 <tr>
-                    <td>${plans.upl_id!}</td>
+                    <td>${plans.uch_plany.profile!}</td>
                     <td>${plans.id!}</td>
                     <td>${plans.forma!}</td>
                     <td>${plans.annot!}</td>
                     <td>${plans.kaf_id!}</td>
-                    <td>${plans.kontr!}</td>
+                    <td><#list plans.disk_semestrs as ds>
+                        <p>${(ds.semestry.nach)!}</p>
+                    </#list></td>
                     <td>${plans.srs!}</td>
                     <td>${plans.nazv!}</td>
                     <td>${plans.napr!}</td>
                     <td>${plans.shifr!}</td>
+                    <td>${(plans.semestry.nach)!}</td>
+
                 </tr>
             </#list>
             </tbody>
@@ -48,6 +54,8 @@
                 <th class="input"></th>
                 <th class="input"></th>
                 <th class="input"></th>
+                <th class="input"></th>
+
             </tr>
             </tfoot>
         </table>

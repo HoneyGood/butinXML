@@ -1,9 +1,8 @@
 package com.butinXML.butinXML.entity;
 
-import net.bytebuddy.implementation.bind.annotation.Default;
-
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 //2
 @Entity
@@ -30,6 +29,42 @@ public class semestry {
 
     @Column(name = "vid")
     private Character vid;
+
+    @OneToMany
+    @JoinColumn(name = "sem_id")
+    private Set<disc_plana> disc_planas;
+
+    @ManyToOne
+    @JoinColumn(name = "upl_id",insertable = false, updatable = false)
+    private uch_plany uch_plany;
+
+    @OneToMany
+    @JoinColumn(name = "sem_id")
+    private Set<disk_semestr> disk_semestrs;
+
+    public Set<disk_semestr> getDisk_semestrs() {
+        return disk_semestrs;
+    }
+
+    public void setDisk_semestrs(Set<disk_semestr> disk_semestrs) {
+        this.disk_semestrs = disk_semestrs;
+    }
+
+    public Set<disc_plana> getDisc_planas() {
+        return disc_planas;
+    }
+
+    public void setDisc_planas(Set<disc_plana> disc_planas) {
+        this.disc_planas = disc_planas;
+    }
+
+    public com.butinXML.butinXML.entity.uch_plany getUch_plany() {
+        return uch_plany;
+    }
+
+    public void setUch_plany(com.butinXML.butinXML.entity.uch_plany uch_plany) {
+        this.uch_plany = uch_plany;
+    }
 
     public Integer getId() {
         return id;

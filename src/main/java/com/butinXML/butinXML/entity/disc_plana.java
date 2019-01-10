@@ -1,6 +1,7 @@
 package com.butinXML.butinXML.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 //3
 @Entity
@@ -51,6 +52,42 @@ public class disc_plana {
 
     @Column(name = "sem_id")
     private Integer sem_id;
+
+    @OneToMany
+    @JoinColumn(name = "disc_id")
+    private Set<disk_semestr> disk_semestrs;
+
+    @ManyToOne
+    @JoinColumn(name = "sem_id",updatable = false,insertable = false)
+    private semestry semestry;
+
+    @ManyToOne
+    @JoinColumn(name = "upl_id",updatable = false,insertable = false)
+    private uch_plany uch_plany;
+
+    public Set<disk_semestr> getDisk_semestrs() {
+        return disk_semestrs;
+    }
+
+    public void setDisk_semestrs(Set<disk_semestr> disk_semestrs) {
+        this.disk_semestrs = disk_semestrs;
+    }
+
+    public com.butinXML.butinXML.entity.semestry getSemestry() {
+        return semestry;
+    }
+
+    public void setSemestry(com.butinXML.butinXML.entity.semestry semestry) {
+        this.semestry = semestry;
+    }
+
+    public com.butinXML.butinXML.entity.uch_plany getUch_plany() {
+        return uch_plany;
+    }
+
+    public void setUch_plany(com.butinXML.butinXML.entity.uch_plany uch_plany) {
+        this.uch_plany = uch_plany;
+    }
 
     public Integer getId() {
         return id;

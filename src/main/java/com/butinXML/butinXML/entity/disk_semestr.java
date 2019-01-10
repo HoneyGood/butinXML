@@ -37,6 +37,30 @@ public class disk_semestr {
     @Column(name = "nomsemestra")
     private Integer nomsemestra;
 
+    @ManyToOne
+    @JoinColumn(name = "sem_id",insertable = false,updatable = false)
+    private semestry semestry;
+
+    @ManyToOne
+    @JoinColumn(name = "disc_id",insertable = false,updatable = false)
+    private disc_plana disc_plana;
+
+    public com.butinXML.butinXML.entity.disc_plana getDisc_plana() {
+        return disc_plana;
+    }
+
+    public void setDisc_plana(com.butinXML.butinXML.entity.disc_plana disc_plana) {
+        this.disc_plana = disc_plana;
+    }
+
+    public com.butinXML.butinXML.entity.semestry getSemestry() {
+        return semestry;
+    }
+
+    public void setSemestry(com.butinXML.butinXML.entity.semestry semestry) {
+        this.semestry = semestry;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -1,9 +1,6 @@
 package com.butinXML.butinXML.controller;
 
-import com.butinXML.butinXML.service.disc_planaService;
-import com.butinXML.butinXML.service.disk_semestrService;
-import com.butinXML.butinXML.service.semestryService;
-import com.butinXML.butinXML.service.uch_planyService;
+import com.butinXML.butinXML.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,13 +12,15 @@ public class entityController {
     private final semestryService semestryService;
     private final disc_planaService disc_planaService;
     private final disk_semestrService disk_semestrService;
+    private final vidy_kontrService vidy_kontrService;
 
     @Autowired
-    public entityController(uch_planyService uch_planyService, semestryService semestryService, disc_planaService disc_planaService, disk_semestrService disk_semestrService) {
+    public entityController(uch_planyService uch_planyService, semestryService semestryService, disc_planaService disc_planaService, disk_semestrService disk_semestrService, vidy_kontrService vidy_kontrService) {
         this.uch_planyService = uch_planyService;
         this.semestryService = semestryService;
         this.disc_planaService = disc_planaService;
         this.disk_semestrService = disk_semestrService;
+        this.vidy_kontrService = vidy_kontrService;
     }
 
     @GetMapping("/educational_plans")
@@ -46,5 +45,11 @@ public class entityController {
     public String getdisk_semestr(Model model) {
         model.addAttribute("disk_semestry", disk_semestrService.findAll());
         return "disk_semestr";
+    }
+
+    @GetMapping("/vidy_kontr")
+    public String getvidy_kontr(Model model) {
+        model.addAttribute("vidy_kontr", vidy_kontrService.findAll());
+        return "vidy_kontr";
     }
 }
